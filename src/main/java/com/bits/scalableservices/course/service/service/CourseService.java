@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class CourseService {
@@ -21,5 +23,10 @@ public class CourseService {
     public Course getCourseById(Long courseId) {
         log.info("Inside saveCourse method of CourseService");
         return courseRepository.findByCourseId(courseId);
+    }
+
+    public List<Course> getCourseBySemester(int courseId) {
+        log.info("Inside saveCourse method of CourseService");
+        return courseRepository.findAllCoursesBySemester(courseId);
     }
 }
