@@ -6,20 +6,20 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "COURSE")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long courseId;
-    @Column(nullable = false)
-    private String courseName;
-    @Column(nullable = false)
-    private String courseCode;
-    private int semester;
-    @Column(nullable = false)
-    private int departmentId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long courseId;
+	@Column(nullable = false)
+	private String courseName;
+	@Column(nullable = false)
+	private String courseCode;
+	private int semester;
+	@Column(nullable = false)
+	private int departmentId;
 }
