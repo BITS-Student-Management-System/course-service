@@ -4,8 +4,6 @@ import com.bits.scalableservices.course.service.entity.Course;
 import com.bits.scalableservices.course.service.service.CourseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,9 +22,15 @@ public class CourseController {
         return courseService.saveCourse(course);
     }
 
-    @GetMapping("/{semester}")
-    public @ResponseBody List<Course> getCourseBySemester(@PathVariable("semester") int courseId){
+    @GetMapping("{courseId}")
+    public @ResponseBody Course getCourseBySemester(@PathVariable("courseId") Long courseId){
         log.info("Inside getCourseBySemester method of CourseController");
-        return courseService.getCourseBySemester(courseId);
+        return courseService.getCourseById(courseId);
+    }
+
+    @GetMapping("/getCourseBySemester/{semester}")
+    public @ResponseBody List<Course> getCourseBySemester(@PathVariable("semester") int semester){
+        log.info("Inside getCourseBySemester method of CourseController");
+        return courseService.getCourseBySemester(semester);
     }
 }

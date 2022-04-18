@@ -25,8 +25,8 @@ public class CourseService {
         return courseRepository.findByCourseId(courseId);
     }
 
-    public List<Course> getCourseBySemester(int courseId) {
+    public List<Course> getCourseBySemester(int semester) {
         log.info("Inside saveCourse method of CourseService");
-        return courseRepository.findAllCoursesBySemester(courseId);
+        return courseRepository.findAllCoursesBySemester(semester);
     }
 }
