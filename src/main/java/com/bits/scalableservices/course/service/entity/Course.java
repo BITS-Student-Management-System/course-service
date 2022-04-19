@@ -21,5 +21,5 @@ public class Course {
 	private String courseCode;
 	private int semester;
 	@Column(nullable = false)
-	private int departmentId;
+	private Long departmentId;
 }

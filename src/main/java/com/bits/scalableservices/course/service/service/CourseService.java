@@ -29,4 +29,9 @@ public class CourseService {
         log.info("Inside saveCourse method of CourseService");
         return courseRepository.findAllCoursesBySemester(semester);
     }
+
+    public List<Course> getCourseListByDepartmentId(Long departmentId) {
+        log.info("Inside getCourseListByDepartmentId method of CourseService");
+        return courseRepository.findAllCoursesByDepartmentId(departmentId);
+    }
 }

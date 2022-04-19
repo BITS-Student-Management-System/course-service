@@ -33,4 +33,10 @@ public class CourseController {
         log.info("Inside getCourseBySemester method of CourseController");
         return courseService.getCourseBySemester(semester);
     }
+
+    @GetMapping("/getCourseListByDepartmentId/{departmentId}")
+    public @ResponseBody List<Course> getCourseListByDepartmentId(@PathVariable("departmentId") Long departmentId){
+        log.info("Inside getCourseListByDepartmentId method of CourseController");
+        return courseService.getCourseListByDepartmentId(departmentId);
+    }
 }
