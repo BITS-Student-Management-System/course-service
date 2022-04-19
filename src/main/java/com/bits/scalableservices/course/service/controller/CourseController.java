@@ -16,6 +16,13 @@ public class CourseController {
     @Autowired
     CourseService courseService;
 
+    @GetMapping("/")
+    public String getHomePage(){
+        log.info("Inside getHomePage method of CourseController");
+        return "<h1>Welcome</h1>";
+    }
+
+
     @PostMapping("/")
     public Course saveCourse(@RequestBody Course course){
         log.info("Inside saveCourse method of CourseController");
