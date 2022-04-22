@@ -23,7 +23,7 @@ public class CourseController {
     }
 
     @GetMapping("{courseId}")
-    public @ResponseBody Course getCourseBySemester(@PathVariable("courseId") Long courseId){
+    public @ResponseBody Course getCourseById(@PathVariable("courseId") Long courseId){
         log.info("Inside getCourseBySemester method of CourseController");
         return courseService.getCourseById(courseId);
     }
